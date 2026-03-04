@@ -102,7 +102,7 @@ function Setup({
           disabled={!paragraph.trim()}
           onClick={onStart}
         >
-          Start
+          Start Now
         </button>
       </div>
     </div>
