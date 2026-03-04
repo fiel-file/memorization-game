@@ -32,8 +32,11 @@ function useSpeechRecognition(onResult: (text: string) => void) {
         }
       }
 
-      if (finalTranscript) onResult(finalTranscript.trim());
-      else onResult(interimTranscript.trim());
+      if (finalTranscript) {
+        onResult(cleanText(finalTranscript));
+      } else {
+        onResult(cleanText(interimTranscript));
+      }
     };
 
     recognition.onend = () => setIsRecording(false);
